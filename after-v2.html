@@ -228,6 +228,97 @@
     .footer-col a:hover { color: white; }
     .footer-bottom { max-width: 1200px; margin: 24px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; text-align: center; }
 
+    /* === Experience Designer: Animations & Micro-interactions === */
+    
+    /* Scroll-triggered fade-in-up */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Stagger children */
+    .reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+    .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+
+    /* Hero entrance */
+    .hero-badge { animation: fadeSlideDown 0.5s ease 0.2s both; }
+    .hero h1 { animation: fadeSlideDown 0.6s ease 0.4s both; }
+    .hero p { animation: fadeSlideDown 0.6s ease 0.6s both; }
+    .hero-ctas { animation: fadeSlideDown 0.6s ease 0.8s both; }
+    .hero-proof { animation: fadeSlideDown 0.5s ease 1.0s both; }
+    .hero-image { animation: fadeSlideLeft 0.8s ease 0.6s both; }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideLeft {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Button hover micro-interactions */
+    .btn-primary { transition: all 0.2s ease; position: relative; overflow: hidden; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* Service card hover lift + glow */
+    .service-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(30,64,175,0.12); border-color: var(--blue-600); }
+    .service-card .service-icon { transition: transform 0.3s ease, background 0.3s ease; }
+    .service-card:hover .service-icon { transform: scale(1.1); background: var(--blue-600); color: white; }
+
+    /* Review card subtle hover */
+    .review { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .review:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+
+    /* Trust bar items subtle pulse on load */
+    .trust-item { animation: fadeIn 0.5s ease both; }
+    .trust-item:nth-child(1) { animation-delay: 0.1s; }
+    .trust-item:nth-child(2) { animation-delay: 0.2s; }
+    .trust-item:nth-child(3) { animation-delay: 0.3s; }
+    .trust-item:nth-child(4) { animation-delay: 0.4s; }
+    .trust-item:nth-child(5) { animation-delay: 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Form input focus glow */
+    .form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+    }
+
+    /* Nav CTA pulse */
+    .nav-cta { animation: subtlePulse 2s ease-in-out infinite; }
+    @keyframes subtlePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(249,115,22,0); }
+    }
+
+    /* Counter animation for stats (CSS-only approach) */
+    .hero-badge { position: relative; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .reveal-stagger > * { opacity: 1; transform: none; }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -301,13 +392,13 @@
   </div>
 
   <!-- Services -->
-  <section class="services" id="services" aria-labelledby="services-heading">
+  <section class="services reveal" id="services" aria-labelledby="services-heading">
     <div class="section-inner">
       <div class="section-header">
         <h2 id="services-heading">What We Fix</h2>
         <p>Fast, reliable service for every plumbing problem — big or small.</p>
       </div>
-      <div class="service-grid">
+      <div class="service-grid reveal-stagger">
         <div class="service-card">
           <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <h3>Pipe Repair & Replacement</h3>
@@ -337,13 +428,13 @@
   </section>
 
   <!-- Social Proof -->
-  <section class="proof" id="reviews" aria-labelledby="reviews-heading">
+  <section class="proof reveal" id="reviews" aria-labelledby="reviews-heading">
     <div class="section-inner">
       <div class="section-header">
         <h2 id="reviews-heading">What Springfield Homeowners Say</h2>
         <p>217 five-star reviews and counting.</p>
       </div>
-      <div class="reviews">
+      <div class="reviews reveal-stagger">
         <div class="review">
           <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <p class="review-text">"Water heater died on a Sunday night. Joe's crew was here in 30 minutes and had a new one installed by morning. No overtime charge. These guys are the real deal."</p>
@@ -367,7 +458,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq" id="faq" aria-labelledby="faq-heading">
+  <section class="faq reveal" id="faq" aria-labelledby="faq-heading">
     <div class="section-inner">
       <div class="section-header">
         <h2 id="faq-heading">Common Questions</h2>
@@ -394,7 +485,7 @@
   </section>
 
   <!-- Contact Form -->
-  <section class="contact" id="contact" aria-labelledby="contact-heading">
+  <section class="contact reveal" id="contact" aria-labelledby="contact-heading">
     <div class="contact-inner">
       <h2 id="contact-heading">Get Your Free Estimate</h2>
       <p>Tell us what's going on — we'll call you back within 15 minutes.</p>
@@ -456,5 +547,18 @@
   </div>
 </footer>
 
+<script>
+// Experience Designer: Scroll-triggered animations via IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // Only animate once
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
