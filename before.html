@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joe's Plumbing</title>
+  <style>
+    body { font-family: Arial; margin: 0; }
+    .header { background: blue; color: white; padding: 20px; }
+    .header h1 { margin: 0; }
+    .nav { background: #333; padding: 10px; }
+    .nav a { color: white; margin-right: 15px; text-decoration: none; }
+    .hero { padding: 40px; text-align: center; background: #f0f0f0; }
+    .hero h2 { font-size: 28px; }
+    .hero img { width: 100%; max-width: 800px; }
+    .services { padding: 40px; }
+    .services h2 { text-align: center; }
+    .service-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .service-card { border: 1px solid #ccc; padding: 20px; width: 250px; text-align: center; }
+    .about { padding: 40px; background: #f9f9f9; }
+    .contact { padding: 40px; }
+    .contact form { max-width: 500px; }
+    .contact input, .contact textarea { width: 100%; padding: 8px; margin: 5px 0 15px; border: 1px solid #ccc; }
+    .contact button { background: blue; color: white; padding: 10px 30px; border: none; cursor: pointer; }
+    .footer { background: #333; color: white; padding: 20px; text-align: center; }
+    .footer a { color: #aaa; }
+    /* No focus styles */
+    a:focus, button:focus, input:focus { outline: none; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Joe's Plumbing</h1>
+  <p>We do plumbing</p>
+</div>
+
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="hero">
+  <h2>Welcome to Our Website!</h2>
+  <p>We are the best plumbing company in the area. We have been serving customers for many years and we pride ourselves on quality work. Our team of experienced plumbers is ready to help you with all your plumbing needs. Whether you need a simple repair or a complete installation, we've got you covered. Contact us today to learn more about our services.</p>
+  <img src="https://placehold.co/1200x600/blue/white?text=Big+Unoptimized+Hero+Image" alt="image1">
+  <br><br>
+  <a href="#contact" style="background: blue; color: white; padding: 15px 30px; text-decoration: none; display: inline-block;">Click Here</a>
+</div>
+
+<div class="services">
+  <h2>Our Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <img src="https://placehold.co/200x200?text=Pipe" alt="">
+      <h4>Pipe Repair</h4>
+      <p>We fix pipes. Call us for more info.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/200x200?text=Drain" alt="">
+      <h4>Drain Cleaning</h4>
+      <p>We clean drains. Very good service.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/200x200?text=Water" alt="">
+      <h4>Water Heater</h4>
+      <p>We install and repair water heaters.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://placehold.co/200x200?text=Emergency" alt="">
+      <h4>Emergency Plumbing</h4>
+      <p>Call us anytime for emergencies.</p>
+    </div>
+  </div>
+</div>
+
+<div class="about">
+  <h2>About Us</h2>
+  <p>Joe's Plumbing was founded many years ago. We are a family owned business that cares about our customers. Our plumbers are experienced and professional. We serve the local area and surrounding communities. We are licensed and insured. Joe started the company because he loves plumbing and wanted to help people with their plumbing problems. We look forward to working with you!</p>
+</div>
+
+<div class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <label>First Name</label>
+    <input type="text">
+    <label>Last Name</label>
+    <input type="text">
+    <label>Email</label>
+    <input type="text">
+    <label>Phone</label>
+    <input type="text">
+    <label>Address</label>
+    <input type="text">
+    <label>City</label>
+    <input type="text">
+    <label>State</label>
+    <input type="text">
+    <label>Zip Code</label>
+    <input type="text">
+    <label>How did you hear about us?</label>
+    <input type="text">
+    <label>Message</label>
+    <textarea rows="5"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 Joe's Plumbing. All rights reserved.</p>
+  <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+</div>
+
+</body>
+</html>
