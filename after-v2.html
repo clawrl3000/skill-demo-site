@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Springfield's #1 Plumber — 24/7 Emergency Service | Joe's Plumbing</title>
+  <meta name="description" content="Licensed plumbers in Springfield. Same-day service, upfront pricing, 4.9 rated. Call (555) 123-4567 for a free estimate. Available 24/7.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Springfield's #1 Rated Plumber — Free Estimates">
+  <meta property="og:description" content="Licensed, insured plumbers. Same-day service. 4.9 from 200+ reviews.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+
+  <!--
+    BRAND SYSTEM (Brand Strategist)
+    ================================
+    Voice: Direct, reassuring, specific. "A knowledgeable neighbor, not a corporate call center."
+    We ARE: Trustworthy, fast, transparent, no-nonsense
+    We are NOT: Salesy, vague, corporate, pushy
+    
+    Colors:
+    - Primary: #1e40af (deep blue — trust, reliability)
+    - Accent: #f97316 (orange — energy, urgency, CTAs)
+    - Success: #16a34a (green — trust signals, checkmarks)
+    - Neutrals: Slate scale (900→50)
+    - Rule: Orange ONLY on CTAs and urgent elements. Blue for everything else.
+    
+    Typography: Inter — single family, 4 weights (400/600/700/900)
+    Icons: Lucide (outline, 2px stroke, 24px default)
+    Photos: Warm, real-feeling, professional but approachable
+    Treatment: Slight warm overlay on hero, no filter on service photos
+  -->
+
+  <!-- Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=600&fit=crop&crop=center">
+
+  <!-- Schema: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Joe's Plumbing",
+    "description": "Licensed plumbing services in Springfield. Emergency repairs, drain cleaning, water heater installation.",
+    "url": "https://example.com",
+    "telephone": "+1-555-123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Springfield",
+      "addressRegion": "ST",
+      "postalCode": "12345",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "217"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a plumber cost in Springfield?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most plumbers in Springfield charge $85-150 for a service call plus $65-100/hour for labor. Joe's Plumbing offers free estimates with no service call fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer 24/7 emergency plumbing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Joe's Plumbing provides 24/7 emergency service. Call (555) 123-4567 anytime — average response time is under 45 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your plumbers licensed and insured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every plumber on our team holds a valid state license and is fully insured. We're also bonded for your protection."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue-900: #1e3a5f;
+      --blue-700: #1e40af;
+      --blue-600: #2563eb;
+      --blue-50: #eff6ff;
+      --orange-500: #f97316;
+      --orange-600: #ea580c;
+      --green-600: #16a34a;
+      --green-50: #f0fdf4;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--slate-800); line-height: 1.6; }
+    
+    /* Accessibility: visible focus */
+    *:focus-visible { outline: 3px solid var(--blue-600); outline-offset: 2px; border-radius: 4px; }
+    
+    /* Skip to content */
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--blue-600); color: white; padding: 8px 16px; border-radius: 0 0 8px 8px; z-index: 999; font-weight: 600; text-decoration: none; }
+    .skip-link:focus { top: 0; }
+
+    /* Header */
+    header { background: var(--slate-900); color: white; }
+    .top-bar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 12px 24px; font-size: 0.85rem; }
+    .top-bar a { color: var(--orange-500); text-decoration: none; font-weight: 700; }
+    .top-bar .stars { color: #fbbf24; }
+    nav { background: white; border-bottom: 1px solid var(--slate-200); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 12px 24px; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: var(--blue-700); text-decoration: none; }
+    .logo span { color: var(--orange-500); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--slate-700); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--blue-600); }
+    .nav-cta { background: var(--orange-500); color: white !important; padding: 10px 20px; border-radius: 8px; font-weight: 700; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--orange-600); }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 100%); color: white; padding: 80px 24px; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 99px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+    .hero h1 .highlight { color: var(--orange-500); }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 24px; max-width: 520px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .btn-primary { background: var(--orange-500); color: white; padding: 16px 32px; border-radius: 10px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--orange-600); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+    .btn-secondary { background: rgba(255,255,255,0.15); color: white; padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+    .hero-proof { display: flex; gap: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+    .hero-proof span { display: flex; align-items: center; gap: 4px; }
+    .hero-proof .check { color: var(--green-600); font-weight: 700; }
+    .hero-image { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .hero-image img { width: 100%; height: auto; display: block; }
+
+    /* Trust Bar */
+    .trust-bar { background: var(--slate-50); border-bottom: 1px solid var(--slate-200); padding: 20px 24px; }
+    .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--slate-600); font-weight: 600; }
+    .trust-icon { font-size: 1.4rem; }
+
+    /* Services */
+    .services { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; color: var(--slate-900); margin-bottom: 8px; }
+    .section-header p { color: var(--slate-600); font-size: 1.05rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .service-card { background: white; border: 2px solid var(--slate-100); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
+    .service-card:hover { border-color: var(--blue-600); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .service-icon { width: 48px; height: 48px; background: var(--blue-50); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { color: var(--slate-600); font-size: 0.95rem; margin-bottom: 12px; }
+    .service-card a { color: var(--blue-600); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+    .service-card a:hover { text-decoration: underline; }
+
+    /* Social Proof */
+    .proof { padding: 80px 24px; background: var(--blue-50); }
+    .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 32px; }
+    .review { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .review-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 8px; }
+    .review-text { color: var(--slate-700); font-style: italic; margin-bottom: 12px; line-height: 1.5; }
+    .review-author { font-weight: 700; color: var(--slate-900); font-size: 0.9rem; }
+    .review-meta { color: var(--slate-600); font-size: 0.8rem; }
+
+    /* FAQ */
+    .faq { padding: 80px 24px; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--slate-200); padding: 20px 0; }
+    .faq-item h3 { font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; cursor: pointer; }
+    .faq-item p { color: var(--slate-600); line-height: 1.6; }
+
+    /* CTA / Contact */
+    .contact { padding: 80px 24px; background: var(--slate-900); color: white; }
+    .contact-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+    .contact p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+    .form-card { background: white; border-radius: 16px; padding: 32px; text-align: left; }
+    .form-step { display: block; }
+    .form-card label { display: block; font-weight: 600; color: var(--slate-700); margin-bottom: 4px; font-size: 0.9rem; }
+    .form-card input, .form-card select, .form-card textarea { width: 100%; padding: 12px 16px; border: 2px solid var(--slate-200); border-radius: 8px; font-size: 1rem; margin-bottom: 16px; font-family: inherit; transition: border-color 0.2s; }
+    .form-card input:focus, .form-card select:focus, .form-card textarea:focus { border-color: var(--blue-600); }
+    .form-card .btn-primary { width: 100%; justify-content: center; font-size: 1.1rem; padding: 16px; }
+    .form-consent { font-size: 0.75rem; color: var(--slate-600); margin-top: 8px; line-height: 1.4; }
+
+    /* Footer */
+    footer { background: var(--slate-800); color: rgba(255,255,255,0.7); padding: 40px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-col h4 { color: white; font-size: 0.9rem; margin-bottom: 12px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; display: block; margin-bottom: 6px; font-size: 0.85rem; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1200px; margin: 24px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .hero-image { display: none; }
+      .top-bar { flex-direction: column; gap: 4px; text-align: center; }
+      .trust-inner { gap: 24px; }
+      .nav-links { display: none; } /* Would be hamburger in production */
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="top-bar">
+    <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-3px;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:5551234567">(555) 123-4567</a> — Available 24/7</span>
+    <span class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> <strong>4.9/5</strong> from 217 reviews</span>
+  </div>
+</header>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Joe's Plumbing home">Joe's <span>Plumbing</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="tel:5551234567" class="nav-cta"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-3px;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Free Estimate</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:4px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Average response time: 42 minutes</div>
+        <h1 id="hero-heading">Springfield's Most Trusted <span class="highlight">Plumber</span> — Day or Night</h1>
+        <p>Burst pipe at 2 AM? Clogged drain ruining your weekend? We show up fast, fix it right, and never surprise you with the bill. Licensed, insured, and 4.9 rated.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-primary">Get a Free Estimate →</a>
+          <a href="tel:5551234567" class="btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-3px;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(555) 123-4567</a>
+        </div>
+        <div class="hero-proof">
+          <span><span class="check">✓</span> Licensed & insured</span>
+          <span><span class="check">✓</span> Upfront pricing</span>
+          <span><span class="check">✓</span> Same-day service</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=400&fit=crop&crop=center" 
+             alt="Licensed plumber repairing a kitchen pipe in a Springfield home" 
+             width="600" height="400" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar" aria-label="Trust indicators">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span> Licensed & Bonded</div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span> 24/7 Emergency Service</div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> No Surprise Bills</div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 4.9 from 217 Reviews</div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span> 15+ Years Experience</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 id="services-heading">What We Fix</h2>
+        <p>Fast, reliable service for every plumbing problem — big or small.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Pipe Repair & Replacement</h3>
+          <p>Leaking, burst, or corroded pipes fixed same-day. We use camera inspection to find the problem without tearing up your walls.</p>
+          <a href="#contact">Get a quote →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/><path d="M14 21v.01"/><path d="M18 17v.01"/></svg></div>
+          <h3>Drain Cleaning</h3>
+          <p>Stubborn clogs cleared in under an hour. We use hydro-jetting for drains that keep backing up — not just a temporary snake fix.</p>
+          <a href="#contact">Get a quote →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+          <h3>Water Heater Service</h3>
+          <p>No hot water? We repair and install tank and tankless water heaters. Most replacements done same-day with a 6-year warranty.</p>
+          <a href="#contact">Get a quote →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+          <h3>24/7 Emergency</h3>
+          <p>Flooding, sewage backup, gas leaks — we're there in under 45 minutes, any time of day. $0 overtime charge on emergency calls.</p>
+          <a href="tel:5551234567">Call now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="proof" id="reviews" aria-labelledby="reviews-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 id="reviews-heading">What Springfield Homeowners Say</h2>
+        <p>217 five-star reviews and counting.</p>
+      </div>
+      <div class="reviews">
+        <div class="review">
+          <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="review-text">"Water heater died on a Sunday night. Joe's crew was here in 30 minutes and had a new one installed by morning. No overtime charge. These guys are the real deal."</p>
+          <p class="review-author">Mike T.</p>
+          <p class="review-meta">Verified customer · Water heater replacement</p>
+        </div>
+        <div class="review">
+          <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="review-text">"Finally found a plumber who shows up when they say they will. Fixed a leak behind our wall that two other companies couldn't figure out. Fair price too."</p>
+          <p class="review-author">Sarah K.</p>
+          <p class="review-meta">Verified customer · Pipe repair</p>
+        </div>
+        <div class="review">
+          <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="review-text">"Called at 6 AM with a basement flooding. They were here before 7. Explained everything, showed me pictures, no pressure. Will use them for everything."</p>
+          <p class="review-author">David R.</p>
+          <p class="review-meta">Verified customer · Emergency service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 id="faq-heading">Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>How much does a plumber cost in Springfield?</h3>
+          <p>Most plumbers charge $85-150 for a service call plus $65-100/hour. At Joe's, there's no service call fee — you only pay for the work. We give you the price upfront before we start, so there are never surprises.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer 24/7 emergency plumbing?</h3>
+          <p>Yes. Call (555) 123-4567 any time — nights, weekends, holidays. Average response time is 42 minutes. No overtime charges on emergency calls.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are your plumbers licensed and insured?</h3>
+          <p>Every plumber on our team holds a valid state license and is fully insured and bonded. We'll show you credentials on arrival — no need to take our word for it.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer a warranty?</h3>
+          <p>Yes. All repairs come with a 1-year warranty. Water heater installations include a 6-year warranty. If something goes wrong, we fix it free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+      <h2 id="contact-heading">Get Your Free Estimate</h2>
+      <p>Tell us what's going on — we'll call you back within 15 minutes.</p>
+      <div class="form-card">
+        <form aria-label="Request a free estimate">
+          <label for="service">What do you need help with?</label>
+          <select id="service" name="service" required autocomplete="off">
+            <option value="">Choose a service...</option>
+            <option>Pipe Repair</option>
+            <option>Drain Cleaning</option>
+            <option>Water Heater</option>
+            <option>Emergency</option>
+            <option>Other</option>
+          </select>
+
+          <label for="phone">Your phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required autocomplete="tel" inputmode="numeric">
+
+          <label for="details">Anything else we should know? <span style="font-weight:400;color:var(--slate-600)">(optional)</span></label>
+          <textarea id="details" name="details" rows="3" placeholder="E.g., 'Water leaking from ceiling in kitchen'"></textarea>
+
+          <button type="submit" class="btn-primary">Get My Free Estimate →</button>
+          <p class="form-consent">By submitting, you agree to receive a call or text about your service request. No spam. Reply STOP to opt out.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Joe's Plumbing</h4>
+      <p style="font-size:0.85rem;max-width:250px;">Springfield's trusted plumber since 2010. Licensed, insured, and available 24/7.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Pipe Repair</a>
+      <a href="#services">Drain Cleaning</a>
+      <a href="#services">Water Heater</a>
+      <a href="#services">Emergency Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:5551234567"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-3px;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(555) 123-4567</a>
+      <a href="mailto:joe@example.com">✉️ joe@example.com</a>
+      <a href="#">📍 Springfield, ST</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/accessibility">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Joe's Plumbing. All rights reserved. Licensed & Insured. State License #PLB-12345.</p>
+  </div>
+</footer>
+
+</body>
+</html>
