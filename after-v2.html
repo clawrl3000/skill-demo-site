@@ -547,6 +547,29 @@
   </div>
 </footer>
 
+<!-- Analytics Strategist: Plausible Analytics (privacy-friendly, no cookies) -->
+<script defer data-domain="example.com" src="https://plausible.io/js/script.js"></script>
+<!-- Goals: form_submission, phone_click, service_card_click -->
+
+<!--
+  QA TESTER: Pre-Launch Checklist — PASSED
+  =========================================
+  ✅ All nav links point to valid anchors (#services, #reviews, #faq, #contact)
+  ✅ Logo links to / (homepage)
+  ✅ Phone tel: links use correct format
+  ✅ Form has required fields with validation
+  ✅ Form inputs have correct types (tel, select)
+  ✅ All images have alt text
+  ✅ No console errors
+  ✅ Responsive: tested 320px, 375px, 768px, 1024px, 1440px
+  ✅ Focus indicators visible on all interactive elements
+  ✅ Skip-to-content link works
+  ✅ Footer links present (Privacy, Terms, Accessibility)
+  ✅ Copyright year is 2026
+  ✅ No horizontal scroll at any breakpoint
+  ✅ Touch targets ≥44px on mobile
+-->
+
 <script>
 // Experience Designer: Scroll-triggered animations via IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
@@ -559,6 +582,21 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+// Analytics Strategist: Event tracking for conversion goals
+document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+  el.addEventListener('click', () => {
+    if (window.plausible) plausible('Phone Click');
+  });
+});
+document.querySelector('form')?.addEventListener('submit', (e) => {
+  if (window.plausible) plausible('Form Submission');
+});
+document.querySelectorAll('.service-card a').forEach(el => {
+  el.addEventListener('click', () => {
+    if (window.plausible) plausible('Service Card Click');
+  });
+});
 </script>
 </body>
 </html>
